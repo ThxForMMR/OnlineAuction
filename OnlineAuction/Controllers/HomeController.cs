@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using OnlineAuction.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OnlineAuction.Controllers
 {
@@ -19,10 +20,12 @@ namespace OnlineAuction.Controllers
             db = context;
         }
 
+       // [Authorize(Roles = "admin, user")]
         public async Task<IActionResult> Index()
         {
             return View(await db.Items.ToListAsync());
         }
+        
         public IActionResult Create()
         {
             return View();
