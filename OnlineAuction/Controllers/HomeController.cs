@@ -19,13 +19,13 @@ namespace OnlineAuction.Controllers
         {
             db = context;
         }
-
-       // [Authorize(Roles = "admin, user")]
+        
         public async Task<IActionResult> Index()
         {
             return View(await db.Items.ToListAsync());
         }
-        
+
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
@@ -38,6 +38,7 @@ namespace OnlineAuction.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id != null)
@@ -58,6 +59,7 @@ namespace OnlineAuction.Controllers
 
         [HttpGet]
         [ActionName("Delete")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> ConfirmDelete(int? id)
         {
             if (id != null)
@@ -80,6 +82,36 @@ namespace OnlineAuction.Controllers
                     db.Items.Remove(item);
                     await db.SaveChangesAsync();
                     return RedirectToAction("Index");
+                }
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("Buy")]
+        [Authorize(Roles = "admin, user")]
+        public async Task<IActionResult> ConfirmBuy(int? id)
+        {
+            if (id != null)
+            {
+                Item item = await db.Items.FirstOrDefaultAsync(p => p.Id == id);
+                if (item != null)
+                    return View(item);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Buy(int? id, int? card)
+        {
+            if (id != null && card != null)
+            {
+                Item item = await db.Items.FirstOrDefaultAsync(p => p.Id == id);
+                if (item != null)
+                {
+                    ViewBag.Message = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
+                    return View("SuccessfulBuy");
+                    //return RedirectToAction("Index");
                 }
             }
             return NotFound();

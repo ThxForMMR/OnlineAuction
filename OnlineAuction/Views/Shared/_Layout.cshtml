@@ -13,6 +13,15 @@
             <div>
                 <ul class="nav navbar-nav">
                     <li><a href="~/Home/Index" class="navbar-brand">Главная</a></li>
+                    @if (User.Identity.IsAuthenticated == false)
+                    {
+                        <li><a href="~/Account/Login" class="navbar-brand">Логин</a></li>
+                        <li><a href="~/Account/Register" class="navbar-brand">Регистрация</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-action="Logout" asp-controller="Account" class="navbar-brand">@User.Identity.Name</a></li>
+                    }
                 </ul>
             </div>
         </div>
