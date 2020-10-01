@@ -89,7 +89,7 @@ namespace OnlineAuction.Controllers
 
         [HttpGet]
         [ActionName("Buy")]
-        [Authorize(Roles = "admin, user")]
+        [Authorize(Roles = "admin,user")]
         public async Task<IActionResult> ConfirmBuy(int? id)
         {
             if (id != null)
