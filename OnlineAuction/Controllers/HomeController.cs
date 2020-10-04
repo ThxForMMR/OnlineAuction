@@ -19,11 +19,33 @@ namespace OnlineAuction.Controllers
         {
             db = context;
         }
-        
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc)
+        {
+            IQueryable<Item> items = db.Items;
+
+            items = sortOrder switch
+            {
+                SortState.NameDesc => items.OrderByDescending(s => s.Name),
+                SortState.CostAsc => items.OrderBy(s => s.Cost),
+                SortState.CostDesc => items.OrderByDescending(s => s.Cost),
+                SortState.CompanyAsc => items.OrderBy(s => s.Company),
+                SortState.CompanyDesc => items.OrderByDescending(s => s.Company),
+                _ => items.OrderBy(s => s.Name),
+            };
+
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                Items = await items.AsNoTracking().ToListAsync(),
+                SortViewModel = new SortViewModel(sortOrder)
+            };
+            
+            return View(viewModel);
+        }
+
+     /*   public async Task<IActionResult> Index()
         {
             return View(await db.Items.ToListAsync());
-        }
+        }*/
 
         [Authorize(Roles = "admin")]
         public IActionResult Create()
