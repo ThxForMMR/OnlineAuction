@@ -19,9 +19,14 @@ namespace OnlineAuction.Controllers
         {
             db = context;
         }
-        public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc)
+        public async Task<IActionResult> Index(string searchString, SortState sortOrder = SortState.NameAsc)
         {
             IQueryable<Item> items = db.Items;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.Name.Contains(searchString));
+            }
 
             items = sortOrder switch
             {
