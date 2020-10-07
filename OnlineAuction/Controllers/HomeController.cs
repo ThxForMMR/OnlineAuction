@@ -45,12 +45,7 @@ namespace OnlineAuction.Controllers
             };
             
             return View(viewModel);
-        }
-
-     /*   public async Task<IActionResult> Index()
-        {
-            return View(await db.Items.ToListAsync());
-        }*/
+        }        
 
         [Authorize(Roles = "admin")]
         public IActionResult Create()

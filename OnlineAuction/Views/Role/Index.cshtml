@@ -1,0 +1,29 @@
+﻿@using OnlineAuction.Models
+@model IQueryable<User>
+<!--импортируем tag-хелперы проекта-->
+@addTagHelper *, OnlineAuction
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-controller="Role" asp-action="Index">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+
+<table class="table">    
+    @foreach (User user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@user.RoleId</td>
+            <td>@user.Password</td>     
+            <td>
+                <a asp-action="ChangeRole" asp-controller="Role" asp-route-id="@user.Id">Изменить роль</a>
+                <a asp-action="Delete" asp-controller="Role" asp-route-id="@user.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>
