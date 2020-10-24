@@ -1,0 +1,50 @@
+﻿@using OnlineAuction.Models
+@model AuctionIndexViewModel
+<!--импортируем tag-хелперы проекта-->
+@addTagHelper *, OnlineAuction
+
+@{
+    ViewData["Title"] = "Auction Page";
+}
+<a asp-controller="Auction" asp-action="Create">Добавить лот</a>
+<a asp-controller="Auction" asp-action="EndAuction">Завершить аукцион</a>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Наименование</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.Name)
+        </dd>
+        <dt>Текущая цена</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.ActualCost)
+        </dd>
+        <dt>Стартовая цена</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.StartBet)
+        </dd>
+        <dt>Шаг ставки</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.RateBet)
+        </dd>
+        <dt>Производитель</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.Company)
+        </dd>
+    </dl>
+</div>
+<form asp-controller="Auction" asp-action="Up">
+    <p>
+        <input type="submit" value="Повысить" />
+    </p>
+</form>
+
+<table class="table">
+    @foreach (Bet bet in Model.Bets)
+    {
+        <tr>
+            <td>@bet.User</td>   
+            <td>@bet.betSize</td>            
+        </tr>
+    }
+</table>
+

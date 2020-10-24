@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using OnlineAuction.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Net.Http;
 
 namespace OnlineAuction.Controllers
 {
@@ -26,7 +27,7 @@ namespace OnlineAuction.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 items = items.Where(s => s.Name.Contains(searchString));
-            }
+            }            
 
             items = sortOrder switch
             {
@@ -45,8 +46,8 @@ namespace OnlineAuction.Controllers
             };
             
             return View(viewModel);
-        }        
-
+        }    
+     
         [Authorize(Roles = "admin")]
         public IActionResult Create()
         {

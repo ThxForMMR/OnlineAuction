@@ -62,7 +62,9 @@
     @foreach (Item item in Model.Items)
     {
         <tr>
-            <td>@item.Name</td><td>@item.Cost</td><td>@item.Company</td>            
+            <td>@item.Name</td>
+            <td>@item.Cost</td>
+            <td>@item.Company</td>
             <td>
                 @if (User.IsInRole("admin"))
                 {

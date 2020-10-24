@@ -18,7 +18,10 @@ namespace OnlineAuction
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("cnf.json")
+                .AddConfiguration(configuration);
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -34,9 +37,12 @@ namespace OnlineAuction
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                     options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                    options.EventsType = typeof(CustomCookieAuthenticationEvents);
                 });
 
             services.AddControllersWithViews();
+            services.AddScoped<CustomCookieAuthenticationEvents>();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +68,7 @@ namespace OnlineAuction
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<AuctionHub>("/AuctionHub");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

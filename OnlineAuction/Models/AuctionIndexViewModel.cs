@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace OnlineAuction.Models
 {
-    public class Company
+    public class AuctionIndexViewModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Info { get; set; }
+        public IEnumerable<Bet> Bets { get; set; }
+        public Lot ActualLot { get; set; }
     }
 }
