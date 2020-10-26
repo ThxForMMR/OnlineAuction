@@ -1,2 +1,4 @@
-﻿<li><a href = "~/Account/Login" class="navbar-brand">Логин</a></li>
-<li><a href="~/Account/Register" class="navbar-brand">Регистрация</a></li>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<li><a href="~/Account/Login" class="navbar-brand">@Localizer["Login"]</a></li>
+<li><a href="~/Account/Register" class="navbar-brand">@Localizer["Registration"]</a></li>

@@ -1,4 +1,6 @@
 ﻿@using OnlineAuction.Models
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @model AuctionIndexViewModel
 <!--импортируем tag-хелперы проекта-->
 @addTagHelper *, OnlineAuction
@@ -6,8 +8,11 @@
 @{
     ViewData["Title"] = "Auction Page";
 }
-<a asp-controller="Auction" asp-action="Create">Добавить лот</a>
-<a asp-controller="Auction" asp-action="EndAuction">Завершить аукцион</a>
+@if (User.IsInRole("admin") == true)
+{
+    <a asp-controller="Auction" asp-action="Create">Добавить лот</a>
+    <a asp-controller="Auction" asp-action="EndAuction">Завершить аукцион</a>
+}
 <div>
     <dl class="dl-horizontal">
         <dt>Наименование</dt>
@@ -42,8 +47,8 @@
     @foreach (Bet bet in Model.Bets)
     {
         <tr>
-            <td>@bet.User</td>   
-            <td>@bet.betSize</td>            
+            <td>@bet.User</td>
+            <td>@bet.betSize</td>
         </tr>
     }
 </table>

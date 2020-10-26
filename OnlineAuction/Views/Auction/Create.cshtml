@@ -1,25 +1,27 @@
 ﻿@model OnlineAuction.Models.Lot
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewBag.Title = "Добавление лота";
 }
-    <form asp-action="create" asp-controller="auction">
-        <div class="form-group">
-            <label asp-for="Name" class="control-label">Наименование</label>
-            <input type="text" asp-for="Name" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="StartBet" class="control-label">Стартовая цена</label>
-            <input type="number" asp-for="StartBet" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Company" class="control-label">Компания производитель</label>
-            <input type="text" asp-for="Company" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="RateBet" class="control-label">Шаг ставки</label>
-            <input type="number" asp-for="RateBet" class="form-control" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Отправить" class="btn btn-default" />
-        </div>
-    </form>
+<form asp-action="create" asp-controller="auction">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Наименование</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="StartBet" class="control-label">Стартовая цена</label>
+        <input type="number" asp-for="StartBet" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Company" class="control-label">Компания производитель</label>
+        <input type="text" asp-for="Company" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RateBet" class="control-label">Шаг ставки</label>
+        <input type="number" asp-for="RateBet" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

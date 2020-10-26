@@ -1,4 +1,6 @@
 ﻿@using OnlineAuction.Models
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @model IQueryable<User>
 <!--импортируем tag-хелперы проекта-->
 @addTagHelper *, OnlineAuction
@@ -9,20 +11,20 @@
 <form asp-controller="Role" asp-action="Index">
     <p>
         Title: <input type="text" name="SearchString">
-        <input type="submit" value="Поиск" />
+        <input type="submit" value="@Localizer["Search"]" />
     </p>
 </form>
 
-<table class="table">    
+<table class="table">
     @foreach (User user in Model)
     {
         <tr>
             <td>@user.Email</td>
             <td>@user.RoleId</td>
-            <td>@user.Password</td>     
+            <td>@user.Password</td>
             <td>
-                <a asp-action="ChangeRole" asp-controller="Role" asp-route-id="@user.Id">Изменить роль</a>
-                <a asp-action="Delete" asp-controller="Role" asp-route-id="@user.Id">Удалить</a>
+                <a asp-action="ChangeRole" asp-controller="Role" asp-route-id="@user.Id">@Localizer["Edit"]</a>
+                <a asp-action="Delete" asp-controller="Role" asp-route-id="@user.Id">@Localizer["Delete"]</a>
             </td>
         </tr>
     }

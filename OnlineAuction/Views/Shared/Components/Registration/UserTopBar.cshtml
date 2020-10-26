@@ -1,2 +1,4 @@
-﻿<li><a asp-action="Logout" asp-controller="Account" class="navbar-brand">@User.Identity.Name</a></li>
-<li><a asp-action="Index" asp-controller="Auction" class="navbar-brand">Аукцион</a></li>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<li><a asp-action="Logout" asp-controller="Account" class="navbar-brand">@User.Identity.Name</a></li>
+<li><a asp-action="Index" asp-controller="Auction" class="navbar-brand">@Localizer["Auc"]</a></li>

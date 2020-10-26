@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using OnlineAuction.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 
 namespace OnlineAuction.Controllers
@@ -138,6 +140,17 @@ namespace OnlineAuction.Controllers
                 }
             }
             return NotFound();
+        }
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1), IsEssential = true }
+            ); ;
+
+            return LocalRedirect(returnUrl);
         }
 
         public IActionResult Privacy()

@@ -11,6 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace OnlineAuction
 {
@@ -40,7 +43,22 @@ namespace OnlineAuction
                     options.EventsType = typeof(CustomCookieAuthenticationEvents);
                 });
 
-            services.AddControllersWithViews();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddControllersWithViews()
+                .AddDataAnnotationsLocalization()
+                .AddViewLocalization();
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("en"),
+                    new CultureInfo("ru")
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("ru");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
             services.AddScoped<CustomCookieAuthenticationEvents>();
             services.AddSignalR();
         }
@@ -65,6 +83,9 @@ namespace OnlineAuction
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
 
             app.UseEndpoints(endpoints =>
             {
