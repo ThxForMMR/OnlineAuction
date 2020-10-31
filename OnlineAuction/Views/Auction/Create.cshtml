@@ -6,22 +6,22 @@
 }
 <form asp-action="create" asp-controller="auction">
     <div class="form-group">
-        <label asp-for="Name" class="control-label">Наименование</label>
+        <label asp-for="Name" class="control-label">@Localizer["Name"]</label>
         <input type="text" asp-for="Name" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="StartBet" class="control-label">Стартовая цена</label>
+        <label asp-for="StartBet" class="control-label">@Localizer["Cost"]</label>
         <input type="number" asp-for="StartBet" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Company" class="control-label">Компания производитель</label>
+        <label asp-for="Company" class="control-label">@Localizer["Company"]</label>
         <input type="text" asp-for="Company" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="RateBet" class="control-label">Шаг ставки</label>
+        <label asp-for="RateBet" class="control-label">@Localizer["RateBet"]</label>
         <input type="number" asp-for="RateBet" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Отправить" class="btn btn-default" />
+        <input type="submit" value="@Localizer["Send"]" class="btn btn-default" />
     </div>
 </form>

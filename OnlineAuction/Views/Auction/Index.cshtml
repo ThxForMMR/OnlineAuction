@@ -10,36 +10,40 @@
 }
 @if (User.IsInRole("admin") == true)
 {
-    <a asp-controller="Auction" asp-action="Create">Добавить лот</a>
-    <a asp-controller="Auction" asp-action="EndAuction">Завершить аукцион</a>
+    <a asp-controller="Auction" asp-action="Create">@Localizer["AddLot"]</a>
+    <a asp-controller="Auction" asp-action="EndAuction">@Localizer["EndAuc"]</a>
 }
 <div>
     <dl class="dl-horizontal">
-        <dt>Наименование</dt>
+        <dt>@Localizer["Name"]</dt>
         <dd>
             @Html.DisplayFor(model => model.ActualLot.Name)
         </dd>
-        <dt>Текущая цена</dt>
+        <dt>@Localizer["ActualCost"]</dt>
         <dd>
             @Html.DisplayFor(model => model.ActualLot.ActualCost)
         </dd>
-        <dt>Стартовая цена</dt>
+        <dt>@Localizer["StartCost"]</dt>
         <dd>
             @Html.DisplayFor(model => model.ActualLot.StartBet)
         </dd>
-        <dt>Шаг ставки</dt>
+        <dt>@Localizer["RateBet"]</dt>
         <dd>
             @Html.DisplayFor(model => model.ActualLot.RateBet)
         </dd>
-        <dt>Производитель</dt>
+        <dt>@Localizer["Company"]</dt>
         <dd>
             @Html.DisplayFor(model => model.ActualLot.Company)
+        </dd>
+        <dt>@Localizer["Status"]</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActualLot.Status)
         </dd>
     </dl>
 </div>
 <form asp-controller="Auction" asp-action="Up">
     <p>
-        <input type="submit" value="Повысить" />
+        <input type="submit" value="@Localizer["Up"]" />
     </p>
 </form>
 
