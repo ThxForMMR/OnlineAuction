@@ -120,6 +120,9 @@
   <data name="Auc" xml:space="preserve">
     <value>Аукцион</value>
   </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
   <data name="UserList" xml:space="preserve">
     <value>Список пользователей</value>
   </data>

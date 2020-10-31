@@ -152,7 +152,10 @@ namespace OnlineAuction.Controllers
 
             return LocalRedirect(returnUrl);
         }
-
+        public IActionResult Chat()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

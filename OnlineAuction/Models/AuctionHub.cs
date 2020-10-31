@@ -8,9 +8,14 @@ namespace OnlineAuction.Models
 {
     public class AuctionHub : Hub
     {
-        public async Task Send(string message)
+        public async Task Send(string message, string userName)
         {
-            await this.Clients.All.SendAsync("Send", message);
+            await Clients.All.SendAsync("Receive", message, userName);
+        }
+
+        public async Task Update()
+        {
+            await Clients.All.SendAsync("DbUpdate");
         }
     }
 }
