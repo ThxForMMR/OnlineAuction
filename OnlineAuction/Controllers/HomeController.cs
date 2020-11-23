@@ -17,10 +17,12 @@ namespace OnlineAuction.Controllers
     public class HomeController : Controller
     {        
         AuctionContext db;
+        private readonly IEmailSender _emailSender;
 
-        public HomeController(AuctionContext context)
+        public HomeController(AuctionContext context, IEmailSender emailSender)
         {
             db = context;
+            _emailSender = emailSender;
         }
         public async Task<IActionResult> Index(string searchString, SortState sortOrder = SortState.NameAsc)
         {
@@ -134,7 +136,10 @@ namespace OnlineAuction.Controllers
                 Item item = await db.Items.FirstOrDefaultAsync(p => p.Id == id);
                 if (item != null)
                 {
-                    ViewBag.Message = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
+                    string msg = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
+                    ViewBag.Message = msg;
+                    var message = new Message(new string[] { User.Identity.Name }, "Покупка", msg);
+                    _emailSender.SendEmail(message);
                     return View("SuccessfulBuy");
                     //return RedirectToAction("Index");
                 }
