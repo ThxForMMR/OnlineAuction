@@ -1,0 +1,35 @@
+name: Build and deploy ASP.NET Core to Azure  
+  
+on: [push]
+
+env:
+  AZURE_WEBAPP_NAME: OnlineAuctionThxForMMR
+  AZURE_WEBAPP_PACKAGE_PATH: './published'
+  NETCORE_VER: 3.1.103  
+jobs:  
+  build:  
+    runs-on: ubuntu-latest  
+  
+    steps:  
+    - uses: actions/checkout@v2  
+  
+    - name: Set up .NET Core  
+      uses: actions/setup-dotnet@v1  
+      with:  
+        dotnet-version: ${{ env.NETCORE_VER }}     
+      
+    - name: Restore
+      run: dotnet restore
+  
+    - name: Build   
+      run: dotnet build --no-restore -c Release  
+  
+    - name: Publish 
+      run: dotnet publish --no-build -c Release --output ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  
+  
+    - name: Deploy to Azure Web App  
+      uses: azure/webapps-deploy@v1  
+      with:  
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}   
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}  
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  
