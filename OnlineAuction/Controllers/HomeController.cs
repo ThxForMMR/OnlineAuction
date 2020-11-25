@@ -138,8 +138,7 @@ namespace OnlineAuction.Controllers
                 {
                     string msg = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
                     ViewBag.Message = msg;
-                    var message = new Message(new string[] { User.Identity.Name }, "Покупка", msg);
-                    _emailSender.SendEmail(message);
+                    await _emailSender.SendEmailAsync(new List<string> { User.Identity.Name }, "Покупка", msg);
                     return View("SuccessfulBuy");
                     //return RedirectToAction("Index");
                 }

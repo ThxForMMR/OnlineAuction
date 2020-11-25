@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace OnlineAuction.Models
 {
-    public interface IEmailSender
+    public class EmailAuthOptions
     {
-        Task SendEmailAsync(List<string> emails, string subject, string message);
+        public string SendGridUser { get; set; }
+        public string SendGridKey { get; set; }
     }
 }

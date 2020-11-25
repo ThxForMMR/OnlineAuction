@@ -32,11 +32,8 @@ namespace OnlineAuction
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var emailConfig = Configuration
-                .GetSection("EmailConfiguration")
-                .Get<EmailConfiguration>();
-            services.AddSingleton(emailConfig);
-            services.AddScoped<IEmailSender, EmailSender>();
+            services.Configure<EmailAuthOptions>(Configuration);
+            services.AddTransient<IEmailSender, EmailSender>();
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AuctionContext>(options => options.UseSqlServer(connection));

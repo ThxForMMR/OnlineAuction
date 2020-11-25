@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -12,16 +12,17 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "SENDEMAILDEMO_ENVIRONMENT_SENDGRID_KEY": "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",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "OnlineAuction": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }
   }
 }

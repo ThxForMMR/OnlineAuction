@@ -35,12 +35,16 @@ namespace OnlineAuction.Controllers
         public async Task<IActionResult> Up()
         {
             if (db.Lots.Count() == 0 || db.Lots.FirstOrDefault().Status == false) return RedirectToAction("Index");
+
             Bet newBet = new Bet();
             newBet.User = User.Identity.Name;
+
             if (db.Bets.Count() != 0) newBet.betSize = db.Bets.Max(p=>p.betSize) + db.Lots.FirstOrDefault().RateBet;
             else newBet.betSize = db.Lots.FirstOrDefault().StartBet;
+
             db.Lots.FirstOrDefault().ActualCost = newBet.betSize;
             db.Bets.Add(newBet);
+
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -59,8 +63,10 @@ namespace OnlineAuction.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> EndAuction()
         {
+            if (db.Lots.Count() == 0 || db.Lots.FirstOrDefault().Status == false) return RedirectToAction("Index");
             db.Lots.FirstOrDefault().Status = false;
             await db.SaveChangesAsync();
             return RedirectToAction("Index");

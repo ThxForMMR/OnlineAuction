@@ -34,7 +34,7 @@ namespace OnlineAuction.Models
             var email = (from c in userPrincipal.Claims where c.Type == ClaimsIdentity.DefaultNameClaimType select c.Value).FirstOrDefault();
 
             User user = await db.Users.FirstOrDefaultAsync(u => u.Email == email);
-            if (user.RoleId != lastRole)
+            if (user != null && user.RoleId != lastRole)
             {
                 context.RejectPrincipal();
 

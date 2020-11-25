@@ -1,57 +1,47 @@
-﻿using MailKit.Net.Smtp;
-using MimeKit;
+﻿using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 
 namespace OnlineAuction.Models
 {
     public class EmailSender : IEmailSender
     {
-        private readonly EmailConfiguration _emailConfig;
-        public EmailSender(EmailConfiguration emailConfig)
+        public EmailSender(IOptions<EmailAuthOptions> optionsAccessor)
         {
-            _emailConfig = emailConfig;
+            Options = optionsAccessor.Value;
         }
-        public void SendEmail(Message message)
+
+        public EmailAuthOptions Options { get; } //set only via Secret Manager
+
+        public Task SendEmailAsync(List<string> emails, string subject, string message)
         {
-            var emailMessage = CreateEmailMessage(message);
-            Send(emailMessage);
+
+            return Execute("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", subject, message, emails);
         }
-        private MimeMessage CreateEmailMessage(Message message)
+
+        public Task Execute(string apiKey, string subject, string message, List<string> emails)
         {
-            var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress(_emailConfig.From));
-            emailMessage.To.AddRange(message.To);
-            emailMessage.Subject = message.Subject;
-            emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Text) { Text = message.Content };
-            return emailMessage;
-        }
-        private void Send(MimeMessage mailMessage)
-        {
-            using (var client = new SmtpClient())
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
             {
-                try
-                {
-                    client.Connect(_emailConfig.SmtpServer, _emailConfig.Port, true);
-                    client.AuthenticationMechanisms.Remove("XOAUTH2");
-                    client.Authenticate(_emailConfig.UserName, _emailConfig.Password);
-                    client.Send(mailMessage);
-                }
-                catch
-                {
-                    //log an error message or throw an exception or both.
-                   
-                    throw;
-                }
-                finally
-                {
-                    client.Disconnect(true);
-                    client.Dispose();
-                }
+                From = new EmailAddress("myrealak@gmail.com", "Auction"),
+                Subject = subject,
+                PlainTextContent = message,
+                HtmlContent = message
+            };
+
+            foreach (var email in emails)
+            {
+                msg.AddTo(new EmailAddress(email));
             }
+
+            Task response = client.SendEmailAsync(msg);
+            return response;
         }
     }
 }
