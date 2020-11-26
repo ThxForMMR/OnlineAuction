@@ -129,7 +129,7 @@ namespace OnlineAuction.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Buy(int? id, int? card)
+        public async Task<IActionResult> Buy(int? id, int? card, string key)
         {
             if (id != null && card != null)
             {
@@ -138,7 +138,7 @@ namespace OnlineAuction.Controllers
                 {
                     string msg = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
                     ViewBag.Message = msg;
-                    await _emailSender.SendEmailAsync(new List<string> { User.Identity.Name }, "Покупка", msg);
+                    await _emailSender.SendEmailAsync(key, new List<string> { User.Identity.Name }, "Покупка", msg);
                     return View("SuccessfulBuy");
                     //return RedirectToAction("Index");
                 }
