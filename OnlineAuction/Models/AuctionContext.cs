@@ -13,6 +13,7 @@ namespace OnlineAuction.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<Bet> Bets { get; set; }
         public DbSet<Lot> Lots { get; set; }
+        public DbSet<ConnectionKey> Keys { get; set; }
 
         public AuctionContext(DbContextOptions<AuctionContext> options) : base(options)
         {
