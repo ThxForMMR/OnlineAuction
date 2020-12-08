@@ -13,7 +13,8 @@ namespace OnlineAuction.Models
         public int StartBet { get; set; }
         public int RateBet { get; set; }
         public int ActualCost { get; set; }
-        public User Owner { get; set; }
+        public string Owner { get; set; }
+        public DateTimeOffset endDate { get; set; }
         public bool Status { get; set; }
     }
 }

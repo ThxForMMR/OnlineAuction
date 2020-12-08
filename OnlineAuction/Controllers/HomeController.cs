@@ -66,6 +66,20 @@ namespace OnlineAuction.Controllers
         }
 
         [Authorize(Roles = "admin")]
+        public IActionResult Key()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Key(ConnectionKey connectionKey)
+        {
+            if (db.Keys.Count() != 0) foreach (var element in db.Keys) db.Keys.Remove(element);
+            db.Keys.Add(connectionKey);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id != null)
@@ -129,16 +143,16 @@ namespace OnlineAuction.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Buy(int? id, int? card, string key)
+        public async Task<IActionResult> Buy(int? id, int? card)
         {
             if (id != null && card != null)
             {
                 Item item = await db.Items.FirstOrDefaultAsync(p => p.Id == id);
                 if (item != null)
                 {
-                    string msg = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString();
+                    string msg = "Товар \"" + item.Name + "\" успешно куплен, оплачено " + card.ToString() + " con str: " + db.Keys.FirstOrDefault().Value;
                     ViewBag.Message = msg;
-                    await _emailSender.SendEmailAsync(key, new List<string> { User.Identity.Name }, "Покупка", msg);
+                    await _emailSender.SendEmailAsync(db.Keys.FirstOrDefault().Value, new List<string> { User.Identity.Name }, "Покупка", msg);
                     return View("SuccessfulBuy");
                     //return RedirectToAction("Index");
                 }

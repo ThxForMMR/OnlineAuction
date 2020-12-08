@@ -123,6 +123,9 @@
   <data name="Chat" xml:space="preserve">
     <value>Чат</value>
   </data>
+  <data name="Key" xml:space="preserve">
+    <value>Ключ</value>
+  </data>
   <data name="UserList" xml:space="preserve">
     <value>Список пользователей</value>
   </data>

@@ -39,6 +39,10 @@
         <dd>
             @Html.DisplayFor(model => model.ActualLot.Status)
         </dd>
+        <dt>@Localizer["EndDate"]</dt>
+        <dd>            
+            @Html.DisplayFor(model => model.ActualLot.endDate)
+        </dd>
     </dl>
 </div>
 <form asp-controller="Auction" asp-action="Up">

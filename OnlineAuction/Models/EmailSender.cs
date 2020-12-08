@@ -31,7 +31,7 @@ namespace OnlineAuction.Models
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("myrealak@gmail.com", "Auction"),
+                From = new EmailAddress("prosmgeorg@yandex.ru", "Auction"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

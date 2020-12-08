@@ -129,6 +129,9 @@
   <data name="EndAuc" xml:space="preserve">
     <value>Закончить аукцион</value>
   </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Дата завершения</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Наименование</value>
   </data>

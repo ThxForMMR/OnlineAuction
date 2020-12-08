@@ -129,6 +129,9 @@
   <data name="EndAuc" xml:space="preserve">
     <value>End auction</value>
   </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End date</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
