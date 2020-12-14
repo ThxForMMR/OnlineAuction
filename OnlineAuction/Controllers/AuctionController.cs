@@ -34,7 +34,7 @@ namespace OnlineAuction.Controllers
                 Bets = await bets.AsNoTracking().ToListAsync(),
                 ActualLot = db.Lots.FirstOrDefault()
             };
-            if (viewModel.ActualLot != null) viewModel.ActualLot.endDate = viewModel.ActualLot.endDate.ToLocalTime();
+            //if (viewModel.ActualLot != null) viewModel.ActualLot.endDate = viewModel.ActualLot.endDate.ToLocalTime();
 
             return View(viewModel);
         }

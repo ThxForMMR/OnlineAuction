@@ -13,6 +13,9 @@
     <a asp-controller="Auction" asp-action="Create">@Localizer["AddLot"]</a>
     <a asp-controller="Auction" asp-action="EndAuction">@Localizer["EndAuc"]</a>
 }
+@{
+    Model.ActualLot.endDate = Model.ActualLot.endDate.ToLocalTime();
+}
 <div>
     <dl class="dl-horizontal">
         <dt>@Localizer["Name"]</dt>
@@ -40,11 +43,12 @@
             @Html.DisplayFor(model => model.ActualLot.Status)
         </dd>
         <dt>@Localizer["EndDate"]</dt>
-        <dd>            
+        <dd>
             @Html.DisplayFor(model => model.ActualLot.endDate)
         </dd>
     </dl>
 </div>
+
 <form asp-controller="Auction" asp-action="Up">
     <p>
         <input type="submit" value="@Localizer["Up"]" />
