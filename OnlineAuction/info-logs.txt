@@ -16641,3 +16641,1536 @@ FROM [Lots] AS [l]
 2020-12-14 07:08:35.257 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 95.9298ms
 2020-12-14 07:08:35.257 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
 2020-12-14 07:08:35.258 +03:00 [INF] Request finished in 132.3436ms 200 text/html; charset=utf-8
+2020-12-14 08:34:28.783 +03:00 [INF] Starting up
+2020-12-14 08:34:30.105 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 08:34:30.524 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 08:34:30.524 +03:00 [INF] Hosting environment: Development
+2020-12-14 08:34:30.524 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 08:34:30.550 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:34:31.345 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:34:32.630 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:34:32.718 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:34:33.084 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:34:33.145 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:34:33.180 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:34:33.223 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:34:33.251 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:34:33.416 +03:00 [INF] Executed ViewResult - view Index executed in 170.7878ms.
+2020-12-14 08:34:33.418 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 236.3116ms
+2020-12-14 08:34:33.419 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:34:33.427 +03:00 [INF] Request finished in 2880.6976ms 200 text/html; charset=utf-8
+2020-12-14 08:34:35.227 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:34:35.243 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:34:35.249 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:34:35.251 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:34:35.258 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:34:35.262 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:34:35.266 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:34:35.285 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.295 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.310 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.312 +03:00 [INF] Executing RedirectResult, redirecting to /Auction/EndAuction.
+2020-12-14 08:34:35.312 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 45.4149ms
+2020-12-14 08:34:35.312 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:34:35.313 +03:00 [INF] Request finished in 87.2802ms 302 
+2020-12-14 08:34:35.317 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction/EndAuction  
+2020-12-14 08:34:35.358 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:34:35.364 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:34:35.366 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:34:35.368 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:34:35.373 +03:00 [INF] Authorization was successful.
+2020-12-14 08:34:35.373 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.EndAuction (OnlineAuction)'
+2020-12-14 08:34:35.377 +03:00 [INF] Route matched with {action = "EndAuction", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] EndAuction() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:34:35.380 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.380 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.381 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.384 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bets] AS [b]
+2020-12-14 08:34:35.490 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Lots] SET [Status] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2020-12-14 08:34:35.519 +03:00 [INF] Executing RedirectResult, redirecting to /Auction.
+2020-12-14 08:34:35.520 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.EndAuction (OnlineAuction) in 142.4939ms
+2020-12-14 08:34:35.520 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.EndAuction (OnlineAuction)'
+2020-12-14 08:34:35.520 +03:00 [INF] Request finished in 203.2888ms 302 
+2020-12-14 08:34:35.523 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:34:35.524 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:34:35.525 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:34:35.526 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:34:35.528 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:34:35.529 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:34:35.529 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:34:35.530 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.531 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.535 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 08:34:35.537 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:34:35.539 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:34:35.585 +03:00 [INF] Executed ViewResult - view Index executed in 46.8416ms.
+2020-12-14 08:34:35.585 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 55.4673ms
+2020-12-14 08:34:35.585 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:34:35.585 +03:00 [INF] Request finished in 61.9778ms 200 text/html; charset=utf-8
+2020-12-14 08:34:51.941 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:34:51.944 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:34:51.946 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:34:51.948 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:34:51.953 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:34:51.954 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:34:51.954 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:34:51.958 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:34:51.960 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:34:51.965 +03:00 [INF] Executed ViewResult - view Index executed in 5.834ms.
+2020-12-14 08:34:51.965 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 10.5602ms
+2020-12-14 08:34:51.965 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:34:51.966 +03:00 [INF] Request finished in 24.8344ms 200 text/html; charset=utf-8
+2020-12-14 08:35:18.756 +03:00 [INF] Starting up
+2020-12-14 08:35:20.385 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 08:35:20.869 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 08:35:20.869 +03:00 [INF] Hosting environment: Development
+2020-12-14 08:35:20.869 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 08:35:20.889 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:35:21.663 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:35:22.038 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:35:22.087 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:35:22.416 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:35:22.472 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:35:22.507 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:35:22.550 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:35:22.580 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:35:22.745 +03:00 [INF] Executed ViewResult - view Index executed in 171.7144ms.
+2020-12-14 08:35:22.747 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 238.7435ms
+2020-12-14 08:35:22.747 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:35:22.757 +03:00 [INF] Request finished in 1870.4057ms 200 text/html; charset=utf-8
+2020-12-14 08:35:24.747 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:35:24.759 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:35:24.774 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:35:24.776 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:35:24.782 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:35:24.784 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:35:24.787 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:35:24.805 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:35:24.813 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:35:24.832 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 08:35:24.834 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:35:24.837 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:35:24.880 +03:00 [INF] Executed ViewResult - view Index executed in 44.7095ms.
+2020-12-14 08:35:24.881 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 93.3453ms
+2020-12-14 08:35:24.881 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:35:24.881 +03:00 [INF] Request finished in 134.1205ms 200 text/html; charset=utf-8
+2020-12-14 08:36:13.679 +03:00 [INF] Starting up
+2020-12-14 08:36:14.874 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 08:36:15.342 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 08:36:15.342 +03:00 [INF] Hosting environment: Development
+2020-12-14 08:36:15.342 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 08:36:15.363 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:36:16.080 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:36:16.464 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:36:16.512 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:36:16.876 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:36:16.928 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:36:16.958 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:36:17.000 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:36:17.029 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:36:17.183 +03:00 [INF] Executed ViewResult - view Index executed in 159.4524ms.
+2020-12-14 08:36:17.186 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 226.8191ms
+2020-12-14 08:36:17.186 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:36:17.194 +03:00 [INF] Request finished in 1834.5048ms 200 text/html; charset=utf-8
+2020-12-14 08:36:19.071 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:36:19.082 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:36:19.088 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:36:19.090 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:36:19.100 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:36:19.102 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:36:19.105 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:36:19.125 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:36:19.138 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:36:19.160 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 08:36:19.163 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:36:19.166 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:36:19.219 +03:00 [INF] Executed ViewResult - view Index executed in 54.4728ms.
+2020-12-14 08:36:19.219 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 113.8601ms
+2020-12-14 08:36:19.219 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:36:19.220 +03:00 [INF] Request finished in 149.8901ms 200 text/html; charset=utf-8
+2020-12-14 08:44:08.544 +03:00 [INF] Starting up
+2020-12-14 08:44:09.717 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 08:44:10.109 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 08:44:10.109 +03:00 [INF] Hosting environment: Development
+2020-12-14 08:44:10.109 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 08:44:10.128 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:44:10.829 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:44:12.035 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:44:12.100 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:44:12.448 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:44:12.501 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:44:12.535 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:44:12.582 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:44:12.615 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:44:12.806 +03:00 [INF] Executed ViewResult - view Index executed in 198.5602ms.
+2020-12-14 08:44:12.808 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 272.2604ms
+2020-12-14 08:44:12.809 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:44:12.818 +03:00 [INF] Request finished in 2692.2442ms 200 text/html; charset=utf-8
+2020-12-14 08:44:14.874 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:44:14.885 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:44:14.898 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:44:14.900 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:44:14.906 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:44:14.907 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:44:14.910 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:44:14.931 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:44:14.943 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:44:14.965 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 08:44:14.967 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:44:14.970 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:44:15.028 +03:00 [INF] Executed ViewResult - view Index executed in 59.7049ms.
+2020-12-14 08:44:15.029 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 117.9628ms
+2020-12-14 08:44:15.029 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:44:15.029 +03:00 [INF] Request finished in 155.5549ms 200 text/html; charset=utf-8
+2020-12-14 08:44:52.295 +03:00 [INF] Starting up
+2020-12-14 08:44:53.476 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 08:44:53.875 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 08:44:53.875 +03:00 [INF] Hosting environment: Development
+2020-12-14 08:44:53.875 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 08:44:53.895 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 08:44:54.605 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:44:54.992 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:44:55.042 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:44:55.395 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:44:55.449 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:44:55.479 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 08:44:55.523 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 08:44:55.552 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:44:55.709 +03:00 [INF] Executed ViewResult - view Index executed in 162.6667ms.
+2020-12-14 08:44:55.711 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 231.1656ms
+2020-12-14 08:44:55.712 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 08:44:55.722 +03:00 [INF] Request finished in 1829.8501ms 200 text/html; charset=utf-8
+2020-12-14 08:44:57.477 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 08:44:57.518 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 08:44:57.521 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 08:44:57.522 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 08:44:57.530 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 08:44:57.537 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:44:57.540 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 08:44:57.560 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 08:44:57.570 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:44:57.591 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 08:44:57.593 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 08:44:57.596 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 08:44:57.638 +03:00 [INF] Executed ViewResult - view Index executed in 44.1947ms.
+2020-12-14 08:44:57.639 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 98.0214ms
+2020-12-14 08:44:57.639 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 08:44:57.639 +03:00 [INF] Request finished in 162.2987ms 200 text/html; charset=utf-8
+2020-12-14 09:01:34.700 +03:00 [INF] Starting up
+2020-12-14 09:01:35.965 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:01:36.396 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:01:36.396 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:01:36.396 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:01:36.422 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:01:37.252 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:01:38.597 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:01:38.675 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:01:39.009 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:01:39.078 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:01:39.113 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:01:39.164 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:01:39.193 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:01:39.359 +03:00 [INF] Executed ViewResult - view Index executed in 172.2695ms.
+2020-12-14 09:01:39.361 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 246.3504ms
+2020-12-14 09:01:39.362 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:01:39.373 +03:00 [INF] Request finished in 2953.7378ms 200 text/html; charset=utf-8
+2020-12-14 09:01:41.278 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:01:41.290 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:01:41.302 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:01:41.304 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:01:41.311 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:01:41.313 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:01:41.318 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:01:41.340 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:01:41.350 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:01:41.373 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:01:41.375 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:01:41.378 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:01:41.429 +03:00 [INF] Executed ViewResult - view Index executed in 52.7873ms.
+2020-12-14 09:01:41.430 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 111.3017ms
+2020-12-14 09:01:41.430 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:01:41.430 +03:00 [INF] Request finished in 152.2257ms 200 text/html; charset=utf-8
+2020-12-14 09:04:21.925 +03:00 [INF] Starting up
+2020-12-14 09:04:22.967 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:04:23.515 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:04:23.515 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:04:23.515 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:04:23.542 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:04:24.270 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:04:24.663 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:04:24.712 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:04:25.067 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:04:25.123 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:04:25.158 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:04:25.201 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:04:25.228 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:04:25.389 +03:00 [INF] Executed ViewResult - view Index executed in 166.9448ms.
+2020-12-14 09:04:25.392 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 232.2984ms
+2020-12-14 09:04:25.392 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:04:25.400 +03:00 [INF] Request finished in 1862.8722ms 200 text/html; charset=utf-8
+2020-12-14 09:04:28.363 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:04:28.379 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:04:28.381 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:04:28.383 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:04:28.395 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:04:28.400 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:04:28.405 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:04:28.429 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:04:28.439 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:04:28.458 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:04:28.460 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:04:28.462 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:04:28.504 +03:00 [INF] Executed ViewResult - view Index executed in 42.8982ms.
+2020-12-14 09:04:28.504 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 98.8334ms
+2020-12-14 09:04:28.504 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:04:28.505 +03:00 [INF] Request finished in 141.9744ms 200 text/html; charset=utf-8
+2020-12-14 09:16:50.817 +03:00 [INF] Starting up
+2020-12-14 09:16:52.034 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:16:52.486 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:16:52.486 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:16:52.486 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:16:52.507 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:16:53.250 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:16:54.465 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:16:54.534 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:16:54.861 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:16:54.920 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:16:54.952 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:16:54.993 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:16:55.020 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:16:55.203 +03:00 [INF] Executed ViewResult - view Index executed in 188.433ms.
+2020-12-14 09:16:55.205 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 252.2916ms
+2020-12-14 09:16:55.206 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:16:55.215 +03:00 [INF] Request finished in 2711.0534ms 200 text/html; charset=utf-8
+2020-12-14 09:16:58.721 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:16:58.738 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:16:58.748 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:16:58.751 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:16:58.757 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:16:58.760 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:16:58.766 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:16:58.792 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:16:58.806 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:16:58.825 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:16:58.826 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:16:58.829 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:16:58.870 +03:00 [INF] Executed ViewResult - view Index executed in 41.8961ms.
+2020-12-14 09:16:58.870 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 103.5696ms
+2020-12-14 09:16:58.870 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:16:58.870 +03:00 [INF] Request finished in 150.4931ms 200 text/html; charset=utf-8
+2020-12-14 09:17:14.747 +03:00 [INF] Starting up
+2020-12-14 09:17:16.010 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:17:16.444 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:17:16.444 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:17:16.444 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:17:16.463 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:17:17.203 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:17:17.626 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:17:17.675 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:17:17.999 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:17:18.057 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:17:18.088 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:17:18.128 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:17:18.158 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:17:18.321 +03:00 [INF] Executed ViewResult - view Index executed in 171.5978ms.
+2020-12-14 09:17:18.323 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 234.3826ms
+2020-12-14 09:17:18.324 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:17:18.334 +03:00 [INF] Request finished in 1873.1935ms 200 text/html; charset=utf-8
+2020-12-14 09:17:21.203 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:17:21.215 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:17:21.227 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:17:21.229 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:17:21.235 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:17:21.236 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:17:21.240 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:17:21.258 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:17:21.269 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:17:21.287 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:17:21.289 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:17:21.292 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:17:21.335 +03:00 [INF] Executed ViewResult - view Index executed in 44.4108ms.
+2020-12-14 09:17:21.335 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 95.213ms
+2020-12-14 09:17:21.336 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:17:21.336 +03:00 [INF] Request finished in 133.7502ms 200 text/html; charset=utf-8
+2020-12-14 09:44:10.526 +03:00 [INF] Starting up
+2020-12-14 09:44:11.653 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:44:12.123 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:44:12.123 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:44:12.123 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:44:12.143 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:44:12.870 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:44:14.063 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:44:14.131 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:44:14.472 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:44:14.526 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:44:14.557 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:44:14.601 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:44:14.631 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:44:14.797 +03:00 [INF] Executed ViewResult - view Index executed in 170.9005ms.
+2020-12-14 09:44:14.799 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 240.4544ms
+2020-12-14 09:44:14.800 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:44:14.808 +03:00 [INF] Request finished in 2668.3966ms 200 text/html; charset=utf-8
+2020-12-14 09:44:17.650 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:44:17.666 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:44:17.668 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:44:17.669 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:44:17.676 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:44:17.682 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:44:17.685 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:44:17.703 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:44:17.712 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:44:17.733 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:44:17.738 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:44:17.741 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:44:17.784 +03:00 [INF] Executed ViewResult - view Index executed in 44.1719ms.
+2020-12-14 09:44:17.784 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 98.8636ms
+2020-12-14 09:44:17.784 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:44:17.785 +03:00 [INF] Request finished in 135.1174ms 200 text/html; charset=utf-8
+2020-12-14 09:54:45.969 +03:00 [INF] Starting up
+2020-12-14 09:54:47.206 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:54:47.608 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:54:47.608 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:54:47.608 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:54:47.627 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:54:48.349 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:54:48.723 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:54:48.773 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:54:49.121 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:54:49.179 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:54:49.212 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:54:49.253 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:54:49.281 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:54:49.443 +03:00 [INF] Executed ViewResult - view Index executed in 167.8455ms.
+2020-12-14 09:54:49.446 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 232.3212ms
+2020-12-14 09:54:49.447 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:54:49.455 +03:00 [INF] Request finished in 1830.5047ms 200 text/html; charset=utf-8
+2020-12-14 09:54:51.183 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:54:51.195 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:54:51.210 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:54:51.213 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:54:51.222 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:54:51.224 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:54:51.229 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:54:51.254 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:54:51.265 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:54:51.289 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:54:51.291 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:54:51.293 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:54:51.334 +03:00 [INF] Executed ViewResult - view Index executed in 41.9189ms.
+2020-12-14 09:54:51.334 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 104.9766ms
+2020-12-14 09:54:51.334 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:54:51.335 +03:00 [INF] Request finished in 152.4606ms 200 text/html; charset=utf-8
+2020-12-14 09:56:22.923 +03:00 [INF] Starting up
+2020-12-14 09:56:24.110 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 09:56:24.514 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 09:56:24.514 +03:00 [INF] Hosting environment: Development
+2020-12-14 09:56:24.514 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 09:56:24.533 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 09:56:25.242 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:56:25.630 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:56:25.677 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:56:26.020 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:56:26.075 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:56:26.107 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 09:56:26.151 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 09:56:26.180 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:56:26.338 +03:00 [INF] Executed ViewResult - view Index executed in 164.138ms.
+2020-12-14 09:56:26.340 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 231.8822ms
+2020-12-14 09:56:26.340 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 09:56:26.351 +03:00 [INF] Request finished in 1820.9198ms 200 text/html; charset=utf-8
+2020-12-14 09:56:27.968 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 09:56:27.981 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 09:56:27.998 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 09:56:28.000 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 09:56:28.006 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 09:56:28.008 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:56:28.012 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 09:56:28.031 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 09:56:28.040 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:56:28.059 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 09:56:28.060 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 09:56:28.063 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 09:56:28.102 +03:00 [INF] Executed ViewResult - view Index executed in 40.341ms.
+2020-12-14 09:56:28.103 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 90.4228ms
+2020-12-14 09:56:28.103 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 09:56:28.103 +03:00 [INF] Request finished in 135.5858ms 200 text/html; charset=utf-8
+2020-12-14 10:01:38.309 +03:00 [INF] Starting up
+2020-12-14 10:01:39.530 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 10:01:39.922 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 10:01:39.922 +03:00 [INF] Hosting environment: Development
+2020-12-14 10:01:39.922 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 10:01:39.947 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 10:01:40.693 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:01:41.103 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:01:41.155 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:01:41.489 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:01:41.543 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:01:41.576 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 10:01:41.617 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 10:01:41.648 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:01:41.808 +03:00 [INF] Executed ViewResult - view Index executed in 166.7417ms.
+2020-12-14 10:01:41.810 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 232.5866ms
+2020-12-14 10:01:41.810 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:01:41.818 +03:00 [INF] Request finished in 1873.6441ms 200 text/html; charset=utf-8
+2020-12-14 10:01:44.202 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 10:01:44.219 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:01:44.228 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:01:44.230 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:01:44.236 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:01:44.238 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:01:44.241 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 10:01:44.260 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 10:01:44.270 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:01:44.289 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 10:01:44.291 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:01:44.294 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:01:44.331 +03:00 [INF] Executed ViewResult - view Index executed in 37.4768ms.
+2020-12-14 10:01:44.331 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 89.5299ms
+2020-12-14 10:01:44.331 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:01:44.331 +03:00 [INF] Request finished in 129.6022ms 200 text/html; charset=utf-8
+2020-12-14 10:23:08.750 +03:00 [INF] Starting up
+2020-12-14 10:23:10.008 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 10:23:10.430 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 10:23:10.430 +03:00 [INF] Hosting environment: Development
+2020-12-14 10:23:10.430 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 10:23:10.451 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 10:23:11.185 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:23:12.527 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:23:12.593 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:23:12.934 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:23:12.990 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:23:13.021 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 10:23:13.065 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 10:23:13.089 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:23:13.245 +03:00 [INF] Executed ViewResult - view Index executed in 161.7966ms.
+2020-12-14 10:23:13.246 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 224.1681ms
+2020-12-14 10:23:13.246 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:23:13.254 +03:00 [INF] Request finished in 2806.3509ms 200 text/html; charset=utf-8
+2020-12-14 10:23:14.868 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 10:23:14.883 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:23:14.893 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:23:14.896 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:23:14.905 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:23:14.907 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:23:14.912 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 10:23:14.931 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 10:23:14.941 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:23:14.960 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 10:23:14.961 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:23:14.965 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:23:15.001 +03:00 [INF] Executed ViewResult - view Index executed in 37.2946ms.
+2020-12-14 10:23:15.002 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 90.0036ms
+2020-12-14 10:23:15.003 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:23:15.004 +03:00 [INF] Request finished in 137.0999ms 200 text/html; charset=utf-8
+2020-12-14 10:23:33.668 +03:00 [INF] Starting up
+2020-12-14 10:23:34.895 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 10:23:35.299 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 10:23:35.299 +03:00 [INF] Hosting environment: Development
+2020-12-14 10:23:35.299 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 10:23:35.325 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 10:23:36.057 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:23:36.447 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:23:36.496 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:23:36.826 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:23:36.878 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:23:36.908 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 10:23:36.949 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 10:23:36.980 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:23:37.141 +03:00 [INF] Executed ViewResult - view Index executed in 167.3426ms.
+2020-12-14 10:23:37.144 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 234.6208ms
+2020-12-14 10:23:37.144 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:23:37.154 +03:00 [INF] Request finished in 1831.6732ms 200 text/html; charset=utf-8
+2020-12-14 10:23:38.578 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 10:23:38.594 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:23:38.596 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:23:38.598 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:23:38.610 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:23:38.613 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:23:38.616 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 10:23:38.635 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 10:23:38.646 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:23:38.664 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 10:23:38.666 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:23:38.669 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:23:38.704 +03:00 [INF] Executed ViewResult - view Index executed in 35.7841ms.
+2020-12-14 10:23:38.704 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 87.6592ms
+2020-12-14 10:23:38.704 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:23:38.705 +03:00 [INF] Request finished in 127.1083ms 200 text/html; charset=utf-8
+2020-12-14 10:24:47.778 +03:00 [INF] Starting up
+2020-12-14 10:24:48.909 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 10:24:49.343 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 10:24:49.343 +03:00 [INF] Hosting environment: Development
+2020-12-14 10:24:49.343 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 10:24:49.362 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 10:24:50.067 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:24:50.450 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:24:50.498 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:24:50.837 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:24:50.890 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:24:50.923 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 10:24:50.965 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 10:24:50.996 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:24:51.166 +03:00 [INF] Executed ViewResult - view Index executed in 177.215ms.
+2020-12-14 10:24:51.168 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 243.6275ms
+2020-12-14 10:24:51.169 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:24:51.180 +03:00 [INF] Request finished in 1820.8308ms 200 text/html; charset=utf-8
+2020-12-14 10:24:53.062 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 10:24:53.075 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:24:53.081 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:24:53.082 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:24:53.093 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:24:53.094 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:24:53.098 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 10:24:53.116 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 10:24:53.126 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:24:53.146 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 10:24:53.148 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:24:53.150 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:24:53.187 +03:00 [INF] Executed ViewResult - view Index executed in 37.4334ms.
+2020-12-14 10:24:53.187 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 88.8782ms
+2020-12-14 10:24:53.187 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:24:53.187 +03:00 [INF] Request finished in 126.1842ms 200 text/html; charset=utf-8
+2020-12-14 10:25:42.733 +03:00 [INF] Starting up
+2020-12-14 10:25:44.070 +03:00 [INF] User profile is available. Using 'C:\Users\Georg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-14 10:25:44.505 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-14 10:25:44.505 +03:00 [INF] Hosting environment: Development
+2020-12-14 10:25:44.505 +03:00 [INF] Content root path: C:\Users\Georg\source\repos\OnlineAuction\OnlineAuction
+2020-12-14 10:25:44.525 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/  
+2020-12-14 10:25:45.297 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:25:45.682 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:25:45.729 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:25:46.054 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:25:46.106 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:25:46.136 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, OnlineAuction.Models.SortState) on controller OnlineAuction.Controllers.HomeController (OnlineAuction).
+2020-12-14 10:25:46.180 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[Company], [i].[Cost], [i].[Name]
+FROM [Items] AS [i]
+ORDER BY [i].[Name]
+2020-12-14 10:25:46.212 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:25:46.364 +03:00 [INF] Executed ViewResult - view Index executed in 157.4756ms.
+2020-12-14 10:25:46.366 +03:00 [INF] Executed action OnlineAuction.Controllers.HomeController.Index (OnlineAuction) in 228.6996ms
+2020-12-14 10:25:46.367 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.HomeController.Index (OnlineAuction)'
+2020-12-14 10:25:46.378 +03:00 [INF] Request finished in 1855.3825ms 200 text/html; charset=utf-8
+2020-12-14 10:25:48.452 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44381/Auction  
+2020-12-14 10:25:48.465 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'AuctionContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-12-14 10:25:48.470 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2020-12-14 10:25:48.472 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2020-12-14 10:25:48.479 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2020-12-14 10:25:48.484 +03:00 [INF] Executing endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:25:48.489 +03:00 [INF] Route matched with {action = "Index", controller = "Auction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller OnlineAuction.Controllers.AuctionController (OnlineAuction).
+2020-12-14 10:25:48.509 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Lots] AS [l]
+2020-12-14 10:25:48.518 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:25:48.538 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[User], [b].[betSize]
+FROM [Bets] AS [b]
+2020-12-14 10:25:48.540 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[ActualCost], [l].[Company], [l].[Name], [l].[Owner], [l].[RateBet], [l].[StartBet], [l].[Status], [l].[endDate]
+FROM [Lots] AS [l]
+2020-12-14 10:25:48.543 +03:00 [INF] Executing ViewResult, running view Index.
+2020-12-14 10:25:48.577 +03:00 [INF] Executed ViewResult - view Index executed in 34.7991ms.
+2020-12-14 10:25:48.577 +03:00 [INF] Executed action OnlineAuction.Controllers.AuctionController.Index (OnlineAuction) in 87.415ms
+2020-12-14 10:25:48.577 +03:00 [INF] Executed endpoint 'OnlineAuction.Controllers.AuctionController.Index (OnlineAuction)'
+2020-12-14 10:25:48.577 +03:00 [INF] Request finished in 125.0855ms 200 text/html; charset=utf-8
